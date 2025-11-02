@@ -22,7 +22,7 @@
     "dr:build": "npx declarative-routing build",
     "dr:build:watch": "npx declarative-routing build --watch",
     "format:write:watch": "pnpm onchange -j 12 -d 1500 -f change -f add  \"**/*\" --exclude-path .gitignore -- prettier -w \"**/*.{ts,tsx,js,jsx,mdx,cjs,mjs,json}\" --cache --log-level warn",
-    "dev": "concurrently -c \"#604CC3, #8FD14F ,#FF6600,#FFA600\" \"pnpm dev:turbo\" \"pnpm dr:build:watch\" \"pnpm format:write:watch\"  --names \"Next.js,Routing,Prettier\""
+  "dev": "concurrently -c \"#604CC3, #8FD14F ,#FF6600,#FFA600\" \"pnpm dev:turbo\" \"pnpm dr:build:watch\" \"pnpm format:write:watch\"  --names \"Next.js,Routing,Prettier\""
   },
   "dependencies": {
     "@better-fetch/fetch": "^1.1.17",

@@ -1,0 +1,39 @@
+﻿version: '3.8'
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - DATABASE_URL=postgresql://user:pass@db:5432/also_partners_db
+      - NEXTAUTH_URL=http://localhost:3000
+      - NEXTAUTH_SECRET=super-secret
+      - BETTER_AUTH_SECRET=dev-secret
+      - BETTER_AUTH_URL=http://localhost:3000
+      - SKIP_BUILD_CHECKS=true
+      - MAIL_HOST=mail.example.com
+      - MAIL_USERNAME=example
+      - MAIL_PASSWORD=example
+      - MAIL_FROM=admin@example.com
+      - GITHUB_CLIENT_ID=github-id
+      - GITHUB_CLIENT_SECRET=github-secret
+      - EMAIL_VERIFICATION_CALLBACK_URL=http://localhost:3000
+      - NEXT_PUBLIC_BETTER_AUTH_URL=http://localhost:3000
+    depends_on:
+      - db
+    restart: unless-stopped
+
+  db:
+    image: postgres:15
+    environment:
+      - POSTGRES_DB=also_partners_db
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=pass
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+volumes:
+  postgres_data:
