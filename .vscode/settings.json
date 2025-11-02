@@ -1,0 +1,13 @@
+{
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "cSpell.words": [
+    "elems",
+    "requireds",
+    "Satyajit",
+    "Shadcn",
+    "sonner",
+    "trivago"
+  ],
+  "prettier.configPath": "./prettier.config.mjs",
+  "eslint.useFlatConfig": true
+}
